@@ -4,9 +4,9 @@
 read -p "Enter country code 'US' (C): " country
 read -p "Enter state or province name 'California' (ST): " state
 read -p "Enter locality 'Los Angeles' (L): " locality
-read -p "Enter organization name 'crDroid' (O): " organization
-read -p "Enter organizational unit 'crDroid' (OU): " organizational_unit
-read -p "Enter common name 'crdroid' (CN): " common_name
+read -p "Enter organization name 'MikuUI' (O): " organization
+read -p "Enter organizational unit 'MikuUI' (OU): " organizational_unit
+read -p "Enter common name 'miku' (CN): " common_name
 read -p "Enter email address 'android@android.com' (emailAddress): " email
 
 # Construct the subject line
@@ -37,10 +37,10 @@ done
 
 
 ## Create vendor for keys
-mkdir -p vendor/lineage-priv
-mv ~/.android-certs vendor/lineage-priv/keys
-echo "PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/lineage-priv/keys/releasekey" > vendor/lineage-priv/keys/keys.mk
-cat <<EOF > vendor/lineage-priv/keys/BUILD.bazel
+mkdir -p vendor/miku-priv
+mv ~/.android-certs vendor/miku-priv/keys
+echo "PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/miku-priv/keys/releasekey" > vendor/miku-priv/keys/keys.mk
+cat <<EOF > vendor/miku-priv/keys/BUILD.bazel
 filegroup(
     name = "android_certificate_directory",
     srcs = glob([
@@ -51,6 +51,6 @@ filegroup(
 )
 EOF
 
-echo "Done! Now build as usual. If builds aren't being signed, add '-include vendor/lineage-priv/keys/keys.mk' to your device mk file"
-echo "Make copies of your vendor/lineage-priv folder as it contains your keys!"
-sleep 3
+echo "Done! Now build as usual. If builds aren't being signed, add '-include vendor/miku-priv/keys/keys.mk' to your device mk file"
+echo "Make copies of your vendor/miku-priv folder as it contains your keys!"
+sleep 1

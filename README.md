@@ -25,6 +25,14 @@ AOSP
 
 `./aosp-create-signed-env.sh`
 
+AOSPA (ParanoidAndroid)
+
+`wget https://raw.githubusercontent.com/Ksawlii-Android-Repos/android-build-signed-script/main/aospa-create-signed-env.sh`
+
+`chmod +x aospa-create-signed-env.sh`
+
+`./aospa-create-signed-env.sh`
+
 2. Enter info for certificate subject line and confirm
 
 3. Hit enter to set no password for each certificate. **Cannot set a password to build inline with this method!**
@@ -39,5 +47,9 @@ MikuUI
 AOSP
 
 `-include vendor/aosp-priv/keys/keys.mk`
+
+AOSP
+
+`-include vendor/aospa-priv/keys/keys.mk`
 
 Build as usual!
